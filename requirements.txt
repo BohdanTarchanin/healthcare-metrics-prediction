@@ -3,4 +3,5 @@ prophet
 numpy
 protobuf
 streamlit
-pandas=
+pandas
+base64
