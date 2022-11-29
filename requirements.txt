@@ -4,4 +4,4 @@ numpy
 protobuf
 streamlit
 pandas
-base64
+
