@@ -47,12 +47,8 @@ periods_input = st.number_input('На скільки періодів ви б х
 min_value = 1, max_value = 365)
 
 if df is not None:
-    #m = Prophet()
-    #m.fit(data)
-    m = Prophet(changepoint_prior_scale=0.5)
-    forecast = m.fit(df).predict(future)
-    fig = m.plot(forecast)
-    st.write(fig)
+    m = Prophet()
+    m.fit(data)
 
 """
 ### Крок 3: візуалізуйте дані прогнозу
