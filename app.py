@@ -99,6 +99,6 @@ if df is not None:
 #met = performance_metrics(df, metrics=['mse', 'rmse', 'mae', 'mape', 'mdape', 'smape', 'coverage'], rolling_window = 0.1)
 #st.write(met)
 
-a = add_changepoints_to_plot(fig.gca(), m, forecast)
+a = add_changepoints_to_plot(fig1.gca(), m, forecast)
 st.write(a)
 
