@@ -70,8 +70,8 @@ if df is not None:
     fig1 = m.plot(forecast)
     st.write(fig1)
             
-    a = add_changepoints_to_plot(fig1.gca(), m, forecast)
-    st.write(a)
+    #a = add_changepoints_to_plot(fig1.gca(), m, forecast)
+    #st.write(a)
 
 
     """
