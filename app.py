@@ -5,6 +5,7 @@ from prophet import Prophet
 from prophet.diagnostics import performance_metrics
 from prophet.diagnostics import cross_validation
 from prophet.plot import plot_cross_validation_metric
+from prophet.plot import plot_plotly, plot_components_plotly
 import base64
 
 st.title('📈 Автоматизоване прогнозування часових рядів')
@@ -86,3 +87,6 @@ if df is not None:
     b64 = base64.b64encode(csv_exp.encode()).decode()  # some strings <-> bytes conversions necessary here
     href = f'<a href="data:file/csv;base64,{b64}">Download CSV File</a> (right-click and save as ** &lt;forecast_name&gt;.csv**)'
     st.markdown(href, unsafe_allow_html=True)
+
+fig3 = plot_plotly(m, forecast)
+st.write(fig3)
