@@ -104,6 +104,6 @@ if df is not None:
 #met = performance_metrics(df, metrics=['mse', 'rmse', 'mae', 'mape', 'mdape', 'smape', 'coverage'], rolling_window = 0.1)
 #st.write(met)
 
-df_cv = cross_validation(m, initial='130 days', period='80 days', horizon = '100 days')
+df_cv = cross_validation(m, initial='13 days', period='8 days', horizon = '10 days')
 st.write(df_cv.head())
 
