@@ -50,14 +50,7 @@ min_value = 1, max_value = 365)
 if df is not None:
     m = Prophet()
     m.fit(data)
-
-    df_cv = cross_validation(m, initial='13 days', period='8 days', horizon = '10 days')
-    st.write(df_cv.head())
-
-    df_p = performance_metrics(df_cv)
-    st.write(df_p.head())
-
-    
+   
             
 """
 ### Крок 3: візуалізуйте дані прогнозу
@@ -78,9 +71,6 @@ if df is not None:
     """
     fig1 = m.plot(forecast)
     st.write(fig1)
-            
-    #a = add_changepoints_to_plot(fig1.gca(), m, forecast)
-    #st.write(a)
 
 
     """
@@ -108,7 +98,4 @@ if df is not None:
     b64 = base64.b64encode(csv_exp.encode()).decode()  # some strings <-> bytes conversions necessary here
     href = f'<a href="data:file/csv;base64,{b64}">Download CSV File</a> (right-click and save as ** &lt;forecast_name&gt;.csv**)'
     st.markdown(href, unsafe_allow_html=True)
-
-#met = performance_metrics(df, metrics=['mse', 'rmse', 'mae', 'mape', 'mdape', 'smape', 'coverage'], rolling_window = 0.1)
-#st.write(met)
 
