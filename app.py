@@ -106,6 +106,4 @@ if df is not None:
 
 df_cv = cross_validation(m, initial='13 days', period='8 days', horizon = '10 days')
 st.write(df_cv.head())
-fig5 = plot_cross_validation_metric(df_cv)
-st.write(fig5)
 
