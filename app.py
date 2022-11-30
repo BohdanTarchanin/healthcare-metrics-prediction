@@ -95,6 +95,6 @@ if df is not None:
     href = f'<a href="data:file/csv;base64,{b64}">Download CSV File</a> (right-click and save as ** &lt;forecast_name&gt;.csv**)'
     st.markdown(href, unsafe_allow_html=True)
 
-met = performance_metrics(df, metrics='mse', rolling_window = 0.1)
+met = performance_metrics(df, metrics=['mse', 'rmse', 'mae', 'mape', 'mdape', 'smape', 'coverage'], rolling_window = 0.1)
 st.write(met)
 
