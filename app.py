@@ -101,7 +101,7 @@ if df is not None:
 
 st.download_button(
         label="Download data as CSV",
-        data=csv,
+        data=b64,
         file_name='&lt;forecast_name&gt;.csv',
         mime='text/csv',
     )
