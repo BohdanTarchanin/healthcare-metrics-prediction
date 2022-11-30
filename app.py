@@ -50,11 +50,14 @@ min_value = 1, max_value = 365)
 if df is not None:
     m = Prophet()
     m.fit(data)
+
     df_cv = cross_validation(m, initial='13 days', period='8 days', horizon = '10 days')
     st.write(df_cv.head())
 
     df_p = performance_metrics(df_cv)
     st.write(df_p.head())
+
+    
             
 """
 ### Крок 3: візуалізуйте дані прогнозу
@@ -108,5 +111,4 @@ if df is not None:
 
 #met = performance_metrics(df, metrics=['mse', 'rmse', 'mae', 'mape', 'mdape', 'smape', 'coverage'], rolling_window = 0.1)
 #st.write(met)
-
 
