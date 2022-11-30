@@ -7,7 +7,7 @@ from prophet.diagnostics import cross_validation
 from prophet.plot import plot_cross_validation_metric
 import base64
 
-st.title('📈 Automated Time Series Forecasting')
+st.title('📈 Автоматизоване прогнозування часових рядів')
 
 """
 This data app uses Facebook's open-source Prophet library to automatically generate future forecast values from an imported dataset.
