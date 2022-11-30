@@ -4,4 +4,6 @@ numpy
 protobuf
 streamlit
 pandas
-
+plotly
+notebook 
+ipywidgets 
