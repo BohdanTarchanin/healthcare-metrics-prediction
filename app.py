@@ -99,5 +99,10 @@ if df is not None:
     href = f'<a href="data:file/csv;base64,{b64}">Download CSV File</a> (right-click and save as ** &lt;forecast_name&gt;.csv**)'
     st.markdown(href, unsafe_allow_html=True)
 
-st.download_button
+st.download_button(
+        label="Download data as CSV",
+        data=csv,
+        file_name='&lt;forecast_name&gt;.csv',
+        mime='text/csv',
+    )
 
