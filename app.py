@@ -38,7 +38,7 @@ if df is not None:
     st.write(data)
     
     max_date = data['ds'].max()
-    #st.write(max_date)
+    st.write(max_date)
 
 """
 ### Step 2: Select Forecast Horizon
