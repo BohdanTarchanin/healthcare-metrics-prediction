@@ -90,3 +90,6 @@ if df is not None:
 
 fig3 = plot_plotly(m, forecast)
 st.write(fig3)
+
+fig4 = plot_components_plotly(m, forecast)
+st.write(fig4)
