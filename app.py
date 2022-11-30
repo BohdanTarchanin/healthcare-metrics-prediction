@@ -69,6 +69,10 @@ if df is not None:
     """
     fig1 = m.plot(forecast)
     st.write(fig1)
+            
+    a = add_changepoints_to_plot(fig1.gca(), m, forecast)
+    st.write(a)
+
 
     """
     Наступні кілька візуальних зображень показують високорівневу тенденцію прогнозованих значень, тенденції днів тижня та річні тенденції (якщо набір даних охоплює кілька років). Заштрихована блакитним кольором зона представляє верхній і нижній довірчі інтервали.
@@ -99,6 +103,4 @@ if df is not None:
 #met = performance_metrics(df, metrics=['mse', 'rmse', 'mae', 'mape', 'mdape', 'smape', 'coverage'], rolling_window = 0.1)
 #st.write(met)
 
-a = add_changepoints_to_plot(fig1.gca(), m, forecast)
-st.write(a)
 
