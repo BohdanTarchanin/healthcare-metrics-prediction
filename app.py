@@ -50,6 +50,8 @@ min_value = 1, max_value = 365)
 if df is not None:
     m = Prophet()
     m.fit(data)
+a = plot_yearly(m)
+st.write(a)
 
 """
 ### Крок 3: візуалізуйте дані прогнозу
@@ -104,6 +106,5 @@ if df is not None:
 #met = performance_metrics(df, metrics=['mse', 'rmse', 'mae', 'mape', 'mdape', 'smape', 'coverage'], rolling_window = 0.1)
 #st.write(met)
 
-a = plot_yearly(m)
-st.write(a)
+
 
