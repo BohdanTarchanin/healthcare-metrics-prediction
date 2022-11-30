@@ -50,9 +50,7 @@ min_value = 1, max_value = 365)
 if df is not None:
     m = Prophet()
     m.fit(data)
-    a = plot_yearly(m)
-    st.write(a)
-
+            
 """
 ### Крок 3: візуалізуйте дані прогнозу
 
