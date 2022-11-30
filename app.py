@@ -6,6 +6,7 @@ from prophet.diagnostics import performance_metrics
 from prophet.diagnostics import cross_validation
 from prophet.plot import plot_cross_validation_metric
 from prophet.plot import plot_plotly, plot_components_plotly
+from prophet.plot import add_changepoints_to_plot
 import base64
 
 st.title('📈 Автоматизоване прогнозування часових рядів')
@@ -97,4 +98,7 @@ if df is not None:
 
 #met = performance_metrics(df, metrics=['mse', 'rmse', 'mae', 'mape', 'mdape', 'smape', 'coverage'], rolling_window = 0.1)
 #st.write(met)
+
+a = add_changepoints_to_plot(fig.gca(), m, forecast)
+st.write(a)
 
