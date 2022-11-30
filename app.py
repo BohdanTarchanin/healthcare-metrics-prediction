@@ -75,6 +75,13 @@ if df is not None:
     fig2 = m.plot_components(forecast)
     st.write(fig2)
 
+    fig3 = plot_plotly(m, forecast)
+    st.write(fig3)
+
+    fig4 = plot_components_plotly(m, forecast)
+    st.write(fig4)
+            
+
 
 """
 ### Крок 4: Завантажте даний прогноз
@@ -88,8 +95,4 @@ if df is not None:
     href = f'<a href="data:file/csv;base64,{b64}">Download CSV File</a> (right-click and save as ** &lt;forecast_name&gt;.csv**)'
     st.markdown(href, unsafe_allow_html=True)
 
-fig3 = plot_plotly(m, forecast)
-st.write(fig3)
 
-fig4 = plot_components_plotly(m, forecast)
-st.write(fig4)
