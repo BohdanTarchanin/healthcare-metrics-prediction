@@ -10,24 +10,19 @@ import base64
 st.title('📈 Автоматизоване прогнозування часових рядів')
 
 """
-This data app uses Facebook's open-source Prophet library to automatically generate future forecast values from an imported dataset.
-You'll be able to import your data from a CSV file, visualize trends and features, analyze forecast performance, and finally download the created forecast 😵 
+Ця програма даних використовує бібліотеку Prophet з відкритим кодом Facebook для автоматичного створення майбутніх прогнозних значень із імпортованого набору даних.
+Ви зможете імпортувати свої дані з файлу CSV, візуалізувати тенденції та функції, проаналізувати ефективність прогнозу та, нарешті, завантажити створений прогноз 😵 
 
-**In beta mode**
-
-Created by Zach Renwick: https://twitter.com/zachrenwick
-
-Code available here: https://github.com/zachrenwick/streamlit_forecasting_app
 """
 
 """
-### Step 1: Import Data
+### Крок 1. Імпорт даних
 """
-df = st.file_uploader('Import the time series csv file here. Columns must be labeled ds and y. The input to Prophet is always a dataframe with two columns: ds and y. The ds (datestamp) column should be of a format expected by Pandas, ideally YYYY-MM-DD for a date or YYYY-MM-DD HH:MM:SS for a timestamp. The y column must be numeric, and represents the measurement we wish to forecast.', type='csv')
+df = st.file_uploader('Імпортуйте файл csv часового ряду сюди. Стовпці повинні мати позначки ds і y. Вхідними даними для Prophet завжди є фрейм даних із двома стовпцями: ds і y. Стовпець ds (штамп дати) має мати формат, очікуваний Pandas, в ідеалі РРРР-ММ-ДД для дати або РРРР-ММ-ДД ГГ:ХХ:СС для позначки часу. Стовпець y має бути числовим і представляти вимірювання, яке ми хочемо спрогнозувати.', type='csv')
 
 st.info(
             f"""
-                👆 Upload a .csv file first. Sample to try: [peyton_manning_wiki_ts.csv](https://raw.githubusercontent.com/zachrenwick/streamlit_forecasting_app/master/example_data/example_wp_log_peyton_manning.csv)
+                👆 Спочатку завантажте файл .csv. Зразок: [peyton_manning_wiki_ts.csv](https://raw.githubusercontent.com/zachrenwick/streamlit_forecasting_app/master/example_data/example_wp_log_peyton_manning.csv)
                 """
         )
 
@@ -41,12 +36,12 @@ if df is not None:
     st.write(max_date)
 
 """
-### Step 2: Select Forecast Horizon
+### Крок 2: Виберіть горизонт прогнозу
 
-Keep in mind that forecasts become less accurate with larger forecast horizons.
+Майте на увазі, що прогнози стають менш точними з більшими горизонтами прогнозування.
 """
 
-periods_input = st.number_input('How many periods would you like to forecast into the future?',
+periods_input = st.number_input('На скільки періодів ви б хотіли спрогнозувати майбутнє?',
 min_value = 1, max_value = 365)
 
 if df is not None:
@@ -54,9 +49,9 @@ if df is not None:
     m.fit(data)
 
 """
-### Step 3: Visualize Forecast Data
+### Крок 3: візуалізуйте дані прогнозу
 
-The below visual shows future predicted values. "yhat" is the predicted value, and the upper and lower limits are (by default) 80% confidence intervals.
+Наведене нижче зображення показує майбутні прогнозовані значення. «це» є прогнозованим значенням, а верхня та нижня межі (за замовчуванням) становлять 80% довірчий інтервал.
 """
 if df is not None:
     future = m.make_future_dataframe(periods=periods_input)
@@ -68,22 +63,22 @@ if df is not None:
     st.write(fcst_filtered)
     
     """
-    The next visual shows the actual (black dots) and predicted (blue line) values over time.
+    Наступне зображення показує фактичні (чорні крапки) і прогнозовані (синя лінія) значення з часом.
     """
     fig1 = m.plot(forecast)
     st.write(fig1)
 
     """
-    The next few visuals show a high level trend of predicted values, day of week trends, and yearly trends (if dataset covers multiple years). The blue shaded area represents upper and lower confidence intervals.
+    Наступні кілька візуальних зображень показують високорівневу тенденцію прогнозованих значень, тенденції днів тижня та річні тенденції (якщо набір даних охоплює кілька років). Заштрихована блакитним кольором зона представляє верхній і нижній довірчі інтервали.
     """
     fig2 = m.plot_components(forecast)
     st.write(fig2)
 
 
 """
-### Step 4: Download the Forecast Data
+### Крок 4: Завантажте даний прогноз
 
-The below link allows you to download the newly created forecast to your computer for further analysis and use.
+Посилання нижче дозволяє завантажити щойно створений прогноз на ваш комп’ютер для подальшого аналізу та використання.
 """
 if df is not None:
     csv_exp = fcst_filtered.to_csv(index=False)
