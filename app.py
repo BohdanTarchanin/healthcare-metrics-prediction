@@ -107,11 +107,11 @@ if df is not None:
     * обрати інтервал для перегляду (тиждень, місяць, рік)
     * завантажити графік
     """
-    fig3 = plot_plotly(m, forecast)
-    st.write(fig3)
+fig3 = plot_plotly(m, forecast)
+st.write(fig3)
 
-    fig4 = plot_components_plotly(m, forecast)
-    st.write(fig4)
+fig4 = plot_components_plotly(m, forecast)
+st.write(fig4)
             
 
 
