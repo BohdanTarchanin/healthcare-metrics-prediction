@@ -59,7 +59,7 @@ if df is not None:
 
 """
 
-periods_input = st.number_input('На скільки днгів ви б хотіли спрогнозувати майбутнє? Введіть число від 1 до 365',
+periods_input = st.number_input('На скільки днів ви хочете зробити прогноз? Введіть число від 1 до 365',
 min_value = 1, max_value = 365)
 
 if df is not None:
