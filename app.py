@@ -10,6 +10,10 @@ from prophet.plot import add_changepoints_to_plot
 from prophet.plot import plot_yearly
 import base64
 
+with st.sidebar:
+    with st.echo():
+        st.write("This code will be printed to the sidebar.")
+
 st.image('Sales-forecast.png')
 
 st.title('Автоматизоване прогнозування для роздрібної торгівлі')
