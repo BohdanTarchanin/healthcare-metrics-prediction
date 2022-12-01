@@ -100,6 +100,9 @@ if df is not None:
     fig2 = m.plot_components(forecast)
     st.write(fig2)
 
+    """
+    **Інтерактивні графіки**
+    """
     fig3 = plot_plotly(m, forecast)
     st.write(fig3)
 
