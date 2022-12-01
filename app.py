@@ -11,7 +11,6 @@ from prophet.plot import plot_yearly
 import base64
 
 with st.sidebar:
-    with st.echo():
         st.write("This code will be printed to the sidebar.")
 
 st.image('Sales-forecast.png')
