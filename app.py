@@ -10,6 +10,8 @@ from prophet.plot import add_changepoints_to_plot
 from prophet.plot import plot_yearly
 import base64
 
+st.image('Sales-forecast.png')
+
 st.title('📈 Автоматизоване прогнозування часових рядів')
 
 """
