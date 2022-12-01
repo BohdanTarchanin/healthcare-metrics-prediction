@@ -13,7 +13,7 @@ import base64
 with st.sidebar:
         st.write("This code will be printed to the sidebar.")
 
-st.image('Sales-forecast.jpg')
+st.image('sales_prediction.jpg')
 
 st.title('Автоматизоване прогнозування для роздрібної торгівлі')
 
