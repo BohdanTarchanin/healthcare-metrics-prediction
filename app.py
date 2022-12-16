@@ -40,7 +40,7 @@ df = st.file_uploader('Імпортуйте свій набір даних сю�
 
 st.info(
             f"""
-                👆 Спочатку завантажте файл .csv. [Зразок оформлення](https://raw.githubusercontent.com/BohdanTarchanin/streamlit-sales-pred-7/master/example_retail_sales.csv?token=GHSAT0AAAAAAB3ZH36Q3IR62ASJEVDUTQOAY4J4M3A)
+                👆 Спочатку завантажте файл .csv. [Зразок оформлення](https://raw.githubusercontent.com/BohdanTarchanin/streamlit-sales-pred-7/master/example_wp_log_peyton_manning.csv?token=GHSAT0AAAAAAB3ZH36Q62TEVRB6KGLGX6FMY44KD4Q)
                 """
         )
 
