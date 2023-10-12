@@ -53,7 +53,7 @@ if df is not None:
     st.success('👆 This is the end date in your data set')
 
 """
-### Крок 2: Введіть кількість днів для прогнозу
+### Step 2: Enter the number of days for the forecast
 
 """
 
