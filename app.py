@@ -22,7 +22,7 @@ with st.sidebar:
         
 # st.image('healthcare_forecast.jpg') 
 
-st.title('Automated Forecasting for Healthcare Metrics')
+st.title('Automated Prediction for Healthcare Metrics')
 
 """
 This application aids in crafting precise forecasts tailored to healthcare. Whether you're forecasting patient admissions, medical equipment demand, or disease trends, accurate data is the foundation. Start by gathering a coherent set of data for your healthcare institution or research. Afterward, follow the 4 steps in this web application to derive a forecast rooted in your data.
