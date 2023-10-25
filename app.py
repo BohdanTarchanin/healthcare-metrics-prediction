@@ -35,7 +35,7 @@ This application aids in crafting precise forecasts tailored to healthcare. Whet
 df = st.file_uploader('Upload your dataset here. The dataset should be structured with date of records and the desired metric. The date column must be labeled "ds" and follow this format: YYYY-MM-DD (Example: 2019-05-20). The metric column should be named "y", representing the numerical value you wish to forecast. Acceptable file format: csv. See the sample file structure below.', type='csv')
 st.info(
             f"""
-                👆 First, upload the .csv file. [File sample](https://raw.githubusercontent.com/facebook/prophet/main/examples/example_air_passengers.csv)
+                👆 First, upload the .csv file. [Example pedestrians covid](https://raw.githubusercontent.com/BohdanTarchanin/healthcare-metrics-prediction/master/example_pedestrians_covid.csv)
                 """
         )
 
